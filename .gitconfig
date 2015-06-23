@@ -1,0 +1,9 @@
+[user]
+	name = Johannes Griebler
+	email = johannes.griebler@gmail.com
+[push]
+	default = simple
+[core]
+	editor = vim
+[credential]
+	helper = cache

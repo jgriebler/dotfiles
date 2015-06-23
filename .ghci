@@ -1,0 +1,13 @@
+:set prompt "λ "
+import Data.Char
+import Data.Function hiding (id, (.))
+import Data.Functor
+import Data.List
+import Data.Maybe
+import Data.Monoid
+import Data.Ord
+import Data.Word
+import Control.Applicative
+import Control.Arrow
+import Control.Lens
+import Control.Monad
