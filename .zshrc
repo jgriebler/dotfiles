@@ -11,7 +11,7 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-autoload -U colors && colors
+autoload -Uz colors && colors
 autoload -Uz vcs_info
 
 zstyle ':vcs_info:*' enable git hg svn
@@ -20,23 +20,11 @@ zstyle ':vcs_info:*' actionformats "(%a) %F{yellow}%s%f:%F{magenta}%b%f"
 
 setopt prompt_subst
 function precmd {
-	if [ -d ".git" -o -d ".hg" -o -d ".svn" ]; then
-		vcs_info
-		if [ -d ".git" ]; then
-			vcs=' git'
-		elif [ -d ".hg" ]; then
-			vcs=' hg'
-		else
-			vcs=' svn'
-		fi
-	else
-		vcs_info_msg_0_=''
-		vcs=''
-	fi
-	RPROMPT='${vcs_info_msg_0_}'
+	vcs_info
 }
 
 PROMPT='%F{cyan}%n%f%# '
+RPROMPT='${vcs_info_msg_0_}'
 
 export EDITOR="vim"
 
