@@ -53,6 +53,11 @@ alias nano='nano -w'
 
 eval $(dircolors -b)
 
+# key bindings, confirmed to work
+# other bindings are copied
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+
 # key bindings
 bindkey "\e[1~" beginning-of-line
 bindkey "\e[4~" end-of-line
