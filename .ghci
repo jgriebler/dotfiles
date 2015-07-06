@@ -9,5 +9,4 @@ import Data.Ord
 import Data.Word
 import Control.Applicative
 import Control.Arrow
-import Control.Lens
 import Control.Monad
