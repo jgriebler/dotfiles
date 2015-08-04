@@ -26,6 +26,7 @@ function precmd {
 PROMPT='%F{cyan}%n%f%# '
 RPROMPT='${vcs_info_msg_0_}'
 
+export CUPS_SERVER="localhost"
 export EDITOR="vim"
 
 PATH="/usr/local/sbin:/usr/local/bin:/usr/bin"
