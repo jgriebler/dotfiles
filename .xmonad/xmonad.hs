@@ -1,13 +1,12 @@
 {-# LANGUAGE FlexibleContexts #-}
 
-import Data.Ratio
-
 import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.FadeWindows
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Layout.NoBorders
+import XMonad.StackSet
 import XMonad.Util.EZConfig
 
 main = xmonad =<< xmobar' customConfig
@@ -30,7 +29,10 @@ manage' = composeAll [ manageHook defaultConfig
                      , className =? "Firefox"     --> doShift "1"
                      , className =? "Thunderbird" --> doShift "1"
                      , className =? "Hexchat"     --> doShift "2"
+                     , className =? "dota_linux"  --> doSink
                      ]
+  where
+    doSink = ask >>= \ w -> doF (sink w)
 
 layout' = smartBorders $ tiled ||| Mirror tiled ||| Full
   where
