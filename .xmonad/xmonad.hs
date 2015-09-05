@@ -29,6 +29,7 @@ manage' = composeAll [ manageHook defaultConfig
                      , className =? "Firefox"     --> doShift "1"
                      , className =? "Thunderbird" --> doShift "1"
                      , className =? "Hexchat"     --> doShift "2"
+                     , className =? "Gimp"        --> doSink
                      , className =? "dota_linux"  --> doSink
                      ]
   where
