@@ -29,11 +29,13 @@ RPROMPT='${vcs_info_msg_0_}'
 export CUPS_SERVER="localhost"
 export EDITOR="vim"
 
-PATH="/usr/local/sbin:/usr/local/bin:/usr/bin"
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 GEM_VERSIONS="`ls $HOME/.gem/ruby`"
 PATH="$HOME/.gem/ruby/`echo $GEM_VERSIONS | sort -rV | head -n 1`/bin:$PATH"
 PATH="$HOME/.cabal/bin:$PATH"
 PATH="$HOME/Programs/bin:$PATH"
+
+TERM=xterm-256color
 
 # new keyboard doesn't have separate menu key
 # setxkbmap -option "compose:menu"
