@@ -53,7 +53,6 @@ alias l='ls -C'
 alias la='ls -A'
 alias ll='ls -al'
 alias ls='ls --color=auto'
-alias java='java -cp .'
 
 eval $(dircolors -b)
 
