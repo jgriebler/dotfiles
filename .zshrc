@@ -30,8 +30,6 @@ export CUPS_SERVER="localhost"
 export EDITOR="vim"
 
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-GEM_VERSIONS="`ls $HOME/.gem/ruby`"
-PATH="$HOME/.gem/ruby/`echo $GEM_VERSIONS | sort -rV | head -n 1`/bin:$PATH"
 PATH="$HOME/.cabal/bin:$PATH"
 PATH="$HOME/Programs/bin:$PATH"
 
