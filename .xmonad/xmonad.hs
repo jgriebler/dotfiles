@@ -11,7 +11,7 @@ import XMonad.Util.EZConfig
 
 main = xmonad =<< xmobar' customConfig
 
-customConfig = defaultConfig
+customConfig = def
         { modMask    = mod4Mask
         , terminal   = "/usr/bin/gnome-terminal"
         , manageHook = manage'
