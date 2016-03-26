@@ -4,34 +4,53 @@ filetype off
 let mapleader = " "
 let maplocalleader = ","
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin()
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'Shougo/vimproc'
-Plugin 'dag/vim2hs'
-Plugin 'eagletmt/ghcmod-vim'
-Plugin 'idris-hackers/idris-vim'
-Plugin 'rust-lang/rust.vim'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'flazz/vim-colorschemes'
+Plug 'VundleVim/Vundle.vim'
+Plug 'Shougo/vimproc'
+Plug 'flazz/vim-colorschemes'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'godlygeek/tabular'
+Plug 'dag/vim2hs'
+Plug 'eagletmt/ghcmod-vim'
+Plug 'idris-hackers/idris-vim'
+Plug 'rust-lang/rust.vim'
+Plug 'plasticboy/vim-markdown'
 
-call vundle#end()
+call plug#end()
 
 colorscheme molokai
 
-map <C-j> <C-]>
-nmap <Leader>q @q
-
+set autoindent
 set showcmd
+set cursorline
+set relativenumber
+set scrolloff=3
 
-syntax on
-filetype plugin indent on
+set wildmenu
+set modelines=0
+
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
 
 set nobackup
 set nowritebackup
+
+nnoremap <CR> :noh<CR>
+nnoremap <C-j> <C-]>
+nnoremap <Leader>v V`]
+
+nnoremap <Leader>w <C-w>v<C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+syntax on
+filetype plugin indent on
 
 let g:haskell_conceal = 0
 " let g:haskell_conceal_wide = 1
