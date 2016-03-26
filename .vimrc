@@ -40,7 +40,7 @@ set nobackup
 set nowritebackup
 
 nnoremap <CR> :noh<CR>
-nnoremap <C-j> <C-]>
+nnoremap <C-m> <C-]>
 nnoremap <Leader>v V`]
 
 nnoremap <Leader>w <C-w>v<C-w>l
