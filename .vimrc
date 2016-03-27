@@ -4,6 +4,7 @@ filetype off
 let mapleader = " "
 let maplocalleader = ","
 
+" Plugin list {{{
 call plug#begin()
 
 Plug 'Shougo/vimproc', { 'do': 'make' }
@@ -18,14 +19,19 @@ Plug 'rust-lang/rust.vim'
 Plug 'plasticboy/vim-markdown'
 
 call plug#end()
+"}}}
 
 colorscheme molokai
 
+" Options {{{
 set autoindent
-set showcmd
 set cursorline
 set relativenumber
 set scrolloff=3
+
+set laststatus=2
+set showcmd
+set ruler
 
 set wildmenu
 set modelines=0
@@ -37,19 +43,22 @@ set hlsearch
 
 set nobackup
 set nowritebackup
+" }}}
 
-nnoremap <CR> :noh<CR>
-nnoremap <C-m> <C-]>
-nnoremap <Leader>v V`]
+" Mappings {{{
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
-nnoremap <Leader>w <C-w>v<C-w>l
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap H ^
+nnoremap L $
 
-let g:haskell_conceal = 0
-" let g:haskell_conceal_wide = 1
-" let g:haskell_conceal_bad = 1
+nnoremap <leader>c :let @/ = ""<cr>
+nnoremap <c-m> <c-]>
+nnoremap <leader>v V`]
 
-let g:vim_markdown_folding_disabled = 1
+nnoremap <leader>w <c-w>v<c-w>l
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+" }}}
