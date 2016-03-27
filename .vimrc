@@ -6,7 +6,6 @@ let maplocalleader = ","
 
 call plug#begin()
 
-Plug 'VundleVim/Vundle.vim'
 Plug 'Shougo/vimproc'
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-repeat'
