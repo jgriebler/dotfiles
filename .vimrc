@@ -6,7 +6,7 @@ let maplocalleader = ","
 
 call plug#begin()
 
-Plug 'Shougo/vimproc'
+Plug 'Shougo/vimproc', { 'do': 'make' }
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
