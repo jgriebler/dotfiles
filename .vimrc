@@ -48,9 +48,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-syntax on
-filetype plugin indent on
-
 let g:haskell_conceal = 0
 " let g:haskell_conceal_wide = 1
 " let g:haskell_conceal_bad = 1
