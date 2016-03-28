@@ -49,8 +49,8 @@ set nowritebackup
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
-nnoremap H ^
-nnoremap L $
+noremap H ^
+noremap L $
 
 nnoremap <leader>c :let @/ = ""<cr>
 nnoremap <c-m> <c-]>
