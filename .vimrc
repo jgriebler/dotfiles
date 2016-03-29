@@ -47,12 +47,22 @@ set nowritebackup
 
 " Mappings {{{
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <silent> <leader>sv :source $MYVIMRC<cr>:let @/ = ""<cr>
+
+nnoremap <leader>y "+y
+nnoremap <leader>d "+d
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+
+vnoremap <leader>y "+y
+vnoremap <leader>d "+d
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
 
 noremap H ^
 noremap L $
 
-nnoremap <leader>c :let @/ = ""<cr>
+nnoremap <silent> <leader>c :let @/ = ""<cr>
 nnoremap <c-m> <c-]>
 nnoremap <leader>v V`]
 
