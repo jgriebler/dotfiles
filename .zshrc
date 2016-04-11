@@ -30,8 +30,7 @@ export CUPS_SERVER="localhost"
 export EDITOR="vim"
 
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-PATH="$HOME/.cabal/bin:$PATH"
-PATH="$HOME/Programs/bin:$PATH"
+PATH="$HOME/.local/bin:$PATH"
 
 TERM=xterm-256color
 
