@@ -26,6 +26,7 @@ function precmd {
 PROMPT='%F{cyan}%n%f%# '
 RPROMPT='${vcs_info_msg_0_}'
 
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export CUPS_SERVER="localhost"
 export EDITOR="vim"
 
