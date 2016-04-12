@@ -30,7 +30,7 @@ library-profiling: True
 -- executable-dynamic: False
 -- profiling:
 -- executable-profiling:
-optimization: True
+optimization: 2
 -- debug-info: False
 -- library-for-ghci:
 -- split-objs: False
