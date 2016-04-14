@@ -1,4 +1,5 @@
 :set prompt "λ "
+:set prompt2 "| "
 import Data.Char
 import Data.Function 
 import Data.Functor
