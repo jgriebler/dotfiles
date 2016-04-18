@@ -72,3 +72,10 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 " }}}
+
+" Autocommands {{{
+augroup asmsyntax
+	au!
+	au BufRead,BufNewFile *.asm setlocal filetype=nasm
+augroup END
+" }}}
