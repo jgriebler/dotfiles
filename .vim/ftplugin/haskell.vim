@@ -4,7 +4,7 @@ setlocal softtabstop=2
 
 augroup cleanup
 	au!
-	au VimEnter * :setlocal foldmethod=manual
+	au VimEnter * setlocal foldmethod=manual
 augroup END
 
 let g:haskell_conceal       = 0
