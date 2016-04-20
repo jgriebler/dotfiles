@@ -1,5 +1,10 @@
-import Data.List
+{-# LANGUAGE CPP #-}
+
+#if __GLASGOW_HASKELL__ < 708
+import Control.Applicative
+#endif
 import Control.Monad
+import Data.List
 import System.Directory
 import System.Environment
 import System.Exit
