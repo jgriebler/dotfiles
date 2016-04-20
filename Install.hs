@@ -1,6 +1,6 @@
 {-# LANGUAGE CPP #-}
 
-#if __GLASGOW_HASKELL__ < 708
+#if __GLASGOW_HASKELL__ < 710
 import Control.Applicative
 #endif
 import Control.Monad
