@@ -10,15 +10,18 @@ main :: IO ()
 main = do
     args <- getArgs
     when (null args) $ do
-      putStrLn "error: requires username"
+      putStrLn "error: requires directory"
       exitFailure
-    let name = head args
-        prefix = "/home" </> name
+    let input = head args
+    prefix <- canonicalizePath input
     e <- doesDirectoryExist prefix
     unless e $ do
-      putStrLn "error: user home directory doesn't exist"
+      putStrLn "error: installation directory doesn't exist"
       exitFailure
     cur <- getCurrentDirectory
+    when (cur `isPrefixOf` prefix) $ do
+      putStrLn "error: cannot install within this directory"
+      exitFailure
     fs <- (\\ ignore) <$> listDirectory "."
     mapM_ (process prefix cur "") fs
   where
