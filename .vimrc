@@ -7,13 +7,11 @@ let maplocalleader = ","
 " Plugin list {{{
 call plug#begin()
 
-Plug 'Shougo/vimproc', { 'do': 'make' }
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'godlygeek/tabular'
 Plug 'dag/vim2hs'
-Plug 'eagletmt/ghcmod-vim'
 Plug 'idris-hackers/idris-vim'
 Plug 'rust-lang/rust.vim'
 Plug 'plasticboy/vim-markdown'
