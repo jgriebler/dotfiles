@@ -15,6 +15,7 @@ Plug 'dag/vim2hs'
 Plug 'idris-hackers/idris-vim'
 Plug 'rust-lang/rust.vim'
 Plug 'plasticboy/vim-markdown'
+Plug 'Harenome/vim-mipssyntax'
 
 call plug#end()
 "}}}
@@ -74,6 +75,6 @@ nnoremap <c-l> <c-w>l
 " Autocommands {{{
 augroup asmsyntax
 	au!
-	au BufRead,BufNewFile *.asm setlocal filetype=nasm
+	au BufRead,BufNewFile *.asm setlocal filetype=mips
 augroup END
 " }}}
