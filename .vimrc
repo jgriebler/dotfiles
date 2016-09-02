@@ -61,11 +61,14 @@ vnoremap <leader>P "+P
 noremap H ^
 noremap L $
 
+inoremap <m-space> <esc>
+
 nnoremap <silent> <leader>c :let @/ = ""<cr>
 nnoremap <c-m> <c-]>
 nnoremap <leader>v V`]
 
 nnoremap <leader>w <c-w>v<c-w>l
+nnoremap <leader>s <c-w>S<c-w>j
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
