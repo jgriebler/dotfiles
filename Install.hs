@@ -40,5 +40,8 @@ main = do
           unless e $ createDirectory $ prefix </> dir'
           fs <- listDirectory dir'
           mapM_ (process prefix base dir') fs
-        else createSymbolicLink (base </> dir </> f) (prefix </> dir </> f)
+        else do
+          let file = prefix </> dir </> f
+          e <- doesFileExist file
+          unless e $ createSymbolicLink (base </> dir </> f) file
     listDirectory d = (\\ [".", ".."]) <$> getDirectoryContents d
