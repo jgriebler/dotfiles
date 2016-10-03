@@ -1,0 +1,9 @@
+#!/bin/sh
+
+setxkbmap -layout de
+setxkbmap -option compose:caps
+
+xset r rate 200 20
+xset s off -dpms
+
+export _JAVA_AWT_WM_NONREPARENTING=1
