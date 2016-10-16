@@ -31,6 +31,12 @@
     # Possible values are "left", "center" and "right"
     alignment = left
 
+    # position of icons.
+    # Possible values are "left", "right" and "off"
+    icon_position = left
+
+    max_icon_size = 32
+
     # The frequency with wich text that is longer than the notification
     # window allows bounces back and forth.
     # This option conflicts with 'word_wrap'.
