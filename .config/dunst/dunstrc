@@ -37,6 +37,9 @@
 
     max_icon_size = 32
 
+    # directories to search when looking for icons
+    icon_folders = "/usr/share/icons/gnome/24x24/status/:/usr/share/icons/gnome/24x24/devices/:/usr/share/icons/hicolor/24x24/apps/"
+
     # The frequency with wich text that is longer than the notification
     # window allows bounces back and forth.
     # This option conflicts with 'word_wrap'.
