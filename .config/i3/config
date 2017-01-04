@@ -156,7 +156,7 @@ mode "$mode_launch" {
 	bindsym t exec thunderbird
 	bindsym h exec hexchat
 	bindsym c exec chromium
-	bindsym s exec spotify
+	bindsym s exec --no-startup-id spotify
 
         # back to normal: Enter or Escape
 	bindsym Return mode "default"
