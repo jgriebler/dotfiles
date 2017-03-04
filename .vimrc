@@ -69,10 +69,10 @@ nnoremap <leader>v V`]
 
 nnoremap <leader>w <c-w>v<c-w>l
 nnoremap <leader>s <c-w>S<c-w>j
-nnoremap <c-h> <c-w>h
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-l> <c-w>l
+nnoremap <leader>j <c-w>h
+nnoremap <leader>k <c-w>j
+nnoremap <leader>l <c-w>k
+nnoremap <leader>ö <c-w>l
 " }}}
 
 " Autocommands {{{
