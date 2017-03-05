@@ -11,6 +11,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'godlygeek/tabular'
+Plug 'scrooloose/nerdcommenter'
 Plug 'dag/vim2hs'
 Plug 'idris-hackers/idris-vim'
 Plug 'rust-lang/rust.vim'
@@ -63,7 +64,7 @@ noremap L $
 
 inoremap <m-space> <esc>
 
-nnoremap <silent> <leader>c :let @/ = ""<cr>
+nnoremap <silent> <leader><leader> :let @/ = ""<cr>
 nnoremap <c-m> <c-]>
 nnoremap <leader>v V`]
 
