@@ -43,6 +43,8 @@ set hlsearch
 
 set nobackup
 set nowritebackup
+
+let g:netrw_browsex_viewer = 'firefox'
 " }}}
 
 " Mappings {{{
