@@ -33,7 +33,7 @@ floating_modifier $mod
 bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
-bindsym $mod+Shift+c kill
+bindsym $mod+c kill
 
 # start dmenu (a program launcher)
 bindsym $mod+p exec --no-startup-id dmenu_run
