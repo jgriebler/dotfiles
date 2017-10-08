@@ -23,7 +23,7 @@ function precmd {
 	vcs_info
 }
 
-PROMPT='%F{cyan}%n%f%# '
+PROMPT='%(!.%F{red}.%F{cyan})%B%n %F{yellow}⇒%b%f '
 RPROMPT='${vcs_info_msg_0_}'
 
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
