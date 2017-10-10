@@ -40,6 +40,8 @@ export EDITOR="vim"
 PATH="/usr/bin/core_perl:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 PATH="$HOME/.local/bin:$PATH"
 
+PYTHON_PACKAGES=$(python -c "import site; print(site.getsitepackages()[0])")
+
 TERM=xterm-256color
 
 # new keyboard doesn't have separate menu key
