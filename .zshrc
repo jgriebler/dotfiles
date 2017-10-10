@@ -28,6 +28,8 @@ compinit
 # PROMPT='%(!.%F{red}.%F{cyan})%K{237} %B%n%b %F{237}%K{235} %F{yellow}%~ %F{235}%k%f '
 # RPROMPT='${vcs_info_msg_0_}'
 
+PYTHON_PACKAGES=$(python -c "import site; print(site.getsitepackages()[0])")
+
 if [[ -r $PYTHON_PACKAGES/powerline/bindings/zsh/powerline.zsh ]]; then
 	powerline-daemon -q
 	source $PYTHON_PACKAGES/powerline/bindings/zsh/powerline.zsh 
@@ -39,8 +41,6 @@ export EDITOR="vim"
 
 PATH="/usr/bin/core_perl:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 PATH="$HOME/.local/bin:$PATH"
-
-PYTHON_PACKAGES=$(python -c "import site; print(site.getsitepackages()[0])")
 
 TERM=xterm-256color
 
