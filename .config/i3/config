@@ -149,7 +149,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $mode_launch Launch: [f]irefox [t]hunderbird [h]exchat [c]hromium [s]potify
+# set $mode_launch Launch: [f]irefox [t]hunderbird [h]exchat [c]hromium [s]potify
+set $mode_launch Launch: %{F#0a81f5}f%{F-}irefox %{F#0a81f5}t%{F-}hunderbird %{F#0a81f5}h%{F-}exchat %{F#0a81f5}c%{F-}hromium %{F#0a81f5}s%{F-}potify
 
 mode "$mode_launch" {
         bindsym f exec firefox
@@ -165,15 +166,16 @@ mode "$mode_launch" {
 
 bindsym $mod+o mode "$mode_launch"
 
-set $mode_system System: [l]ock l[o]gout [s]uspend [h]ibernate [r]eboot [S]hutdown
+# set $mode_system System: [l]ock l[o]gout s[u]spend [h]ibernate [r]eboot [s]hutdown
+set $mode_system System: %{F#0a81f5}l%{F-}ock l%{F#0a81f5}o%{F-}gout s%{F#0a81f5}u%{F-}spend %{F#0a81f5}h%{F-}ibernate %{F#0a81f5}r%{F-}eboot %{F#0a81f5}s%{F-}hutdown
 
 mode "$mode_system" {
         bindsym l exec --no-startup-id i3exit lock, mode "default"
         bindsym o exec --no-startup-id i3exit logout, mode "default"
-        bindsym s exec --no-startup-id i3exit suspend, mode "default"
+        bindsym u exec --no-startup-id i3exit suspend, mode "default"
         bindsym h exec --no-startup-id i3exit hibernate, mode "default"
         bindsym r exec --no-startup-id i3exit reboot, mode "default"
-        bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+        bindsym s exec --no-startup-id i3exit shutdown, mode "default"
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -184,13 +186,14 @@ bindsym $mod+m mode "$mode_system"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-}
+# bar {
+#         status_command i3status
+# }
 
 exec --no-startup-id tiled_setup
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
+exec_always --no-startup-id launch_polybar
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
