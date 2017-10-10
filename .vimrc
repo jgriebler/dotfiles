@@ -21,6 +21,8 @@ Plug 'Harenome/vim-mipssyntax'
 call plug#end()
 "}}}
 
+set rtp+=$PYTHON_PACKAGES/powerline/bindings/vim
+
 colorscheme molokai
 
 " Options {{{
@@ -31,6 +33,7 @@ set scrolloff=3
 
 set laststatus=2
 set showcmd
+set noshowmode
 set ruler
 
 set wildmenu

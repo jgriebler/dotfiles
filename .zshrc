@@ -11,20 +11,27 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-autoload -Uz colors && colors
-autoload -Uz vcs_info
+# disabled in favour of powerline
+#
+# autoload -Uz colors && colors
+# autoload -Uz vcs_info
+# 
+# zstyle ':vcs_info:*' enable git hg svn
+# zstyle ':vcs_info:*' formats "%F{235}%K{235} %F{magenta}%b %F{233}%k %F{yellow}%s%f"
+# zstyle ':vcs_info:*' actionformats "%F{237}%K{237} %F{red}%a %F{235}%K{235} %F{magenta}%b %F{233}%k %F{yellow}%s%f"
+# 
+# setopt prompt_subst
+# function precmd {
+# 	vcs_info
+# }
+# 
+# PROMPT='%(!.%F{red}.%F{cyan})%K{237} %B%n%b %F{237}%K{235} %F{yellow}%~ %F{235}%k%f '
+# RPROMPT='${vcs_info_msg_0_}'
 
-zstyle ':vcs_info:*' enable git hg svn
-zstyle ':vcs_info:*' formats "%F{235}%K{235} %F{magenta}%b %F{233}%k %F{yellow}%s%f"
-zstyle ':vcs_info:*' actionformats "%F{237}%K{237} %F{red}%a %F{235}%K{235} %F{magenta}%b %F{233}%k %F{yellow}%s%f"
-
-setopt prompt_subst
-function precmd {
-	vcs_info
-}
-
-PROMPT='%(!.%F{red}.%F{cyan})%K{237} %B%n%b %F{237}%K{235} %F{yellow}%~ %F{235}%k%f '
-RPROMPT='${vcs_info_msg_0_}'
+if [[ -r $PYTHON_PACKAGES/powerline/bindings/zsh/powerline.zsh ]]; then
+	powerline-daemon -q
+	source $PYTHON_PACKAGES/powerline/bindings/zsh/powerline.zsh 
+fi
 
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export CUPS_SERVER="localhost"
