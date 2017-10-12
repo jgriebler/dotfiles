@@ -6,4 +6,6 @@ setxkbmap -option compose:caps
 xset r rate 200 20
 xset s off -dpms
 
+feh --bg-fill ~/Pictures/archlinux.png
+
 export _JAVA_AWT_WM_NONREPARENTING=1
