@@ -49,6 +49,7 @@ set nobackup
 set nowritebackup
 
 let g:netrw_browsex_viewer = 'firefox'
+let g:ranger_replace_netrw = 1
 " }}}
 
 " Mappings {{{
