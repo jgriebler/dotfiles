@@ -10,6 +10,7 @@ call plug#begin()
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'francoiscabrol/ranger.vim'
 Plug 'godlygeek/tabular'
 Plug 'scrooloose/nerdcommenter'
 Plug 'dag/vim2hs'
@@ -54,7 +55,7 @@ let g:netrw_browsex_viewer = 'firefox'
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <silent> <leader>sv :source $MYVIMRC<cr>:let @/ = ""<cr>
 
-nnoremap <leader>f <c-]>
+nnoremap <leader>i <c-]>
 nnoremap <leader>r <c-t>
 
 nnoremap <leader>y "+y
