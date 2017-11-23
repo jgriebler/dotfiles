@@ -30,9 +30,11 @@ compinit
 
 PYTHON_PACKAGES=$(python -c "import site; print(site.getsitepackages()[0])")
 
-if [[ -r $PYTHON_PACKAGES/powerline/bindings/zsh/powerline.zsh ]]; then
+POWERLINE_ZSH=$PYTHON_PACKAGES/powerline/bindings/zsh
+
+if [[ $(tty) == /dev/pts/* ]] && [[ -r $POWERLINE_ZSH/powerline.zsh ]]; then
 	powerline-daemon -q
-	source $PYTHON_PACKAGES/powerline/bindings/zsh/powerline.zsh 
+	source $POWERLINE_ZSH/powerline.zsh
 fi
 
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
