@@ -18,6 +18,7 @@ Plug 'idris-hackers/idris-vim'
 Plug 'rust-lang/rust.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'Harenome/vim-mipssyntax'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 call plug#end()
 "}}}
