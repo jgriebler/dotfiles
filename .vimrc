@@ -10,15 +10,17 @@ call plug#begin()
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'godlygeek/tabular'
 Plug 'scrooloose/nerdcommenter'
-Plug 'dag/vim2hs'
+Plug 'neovimhaskell/haskell-vim'
 Plug 'idris-hackers/idris-vim'
 Plug 'rust-lang/rust.vim'
+Plug 'cespare/vim-toml'
 Plug 'plasticboy/vim-markdown'
 Plug 'Harenome/vim-mipssyntax'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'ajh17/VimCompletesMe'
 
 call plug#end()
 "}}}
