@@ -20,3 +20,5 @@ call vimtex#imaps#add_map({
     \   'lhs' : '0',
     \   'rhs' : '\varnothing',
     \ })
+
+let b:vcm_omni_pattern = g:vimtex#re#neocomplete
