@@ -17,6 +17,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'idris-hackers/idris-vim'
 Plug 'rust-lang/rust.vim'
+Plug 'lervag/vimtex'
 Plug 'cespare/vim-toml'
 Plug 'plasticboy/vim-markdown'
 Plug 'Harenome/vim-mipssyntax'
@@ -34,6 +35,7 @@ set autoindent
 set cursorline
 set relativenumber
 set scrolloff=3
+set textwidth=80
 
 set laststatus=2
 set showcmd
