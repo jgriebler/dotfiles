@@ -30,7 +30,7 @@ main = do
     fs <- (\\ ignore) <$> listDirectory "."
     mapM_ (process prefix cur "") fs
   where
-    ignore = [".git", ".gitignore", "Install.hs"]
+    ignore = [".git", ".gitignore", "Install.hs", "tags"]
     process prefix base dir f = do
       d <- doesDirectoryExist $ dir </> f
       if d
