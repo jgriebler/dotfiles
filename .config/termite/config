@@ -2,7 +2,7 @@
 
 font = Source Code Pro 10
 
-audible_bell = true
+audible_bell = false
 mouse_autohide = true
 
 browser = firefox
