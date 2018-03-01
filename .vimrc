@@ -31,6 +31,8 @@ set rtp+=$PYTHON_PACKAGES/powerline/bindings/vim
 colorscheme molokai
 
 " Options {{{
+set list
+set listchars=tab:→\ ,trail:·
 set autoindent
 set cursorline
 set relativenumber
@@ -52,6 +54,7 @@ set hlsearch
 
 set nobackup
 set nowritebackup
+set hidden
 
 let g:netrw_browsex_viewer = 'firefox'
 let g:ranger_replace_netrw = 1
