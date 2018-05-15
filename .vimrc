@@ -21,6 +21,7 @@ Plug 'lervag/vimtex'
 Plug 'cespare/vim-toml'
 Plug 'plasticboy/vim-markdown'
 Plug 'Harenome/vim-mipssyntax'
+Plug 'rhysd/vim-wasm'
 Plug 'ajh17/VimCompletesMe'
 
 call plug#end()
@@ -83,7 +84,6 @@ noremap L $
 inoremap <m-space> <esc>
 
 nnoremap <silent> <leader><leader> :let @/ = ""<cr>
-nnoremap <c-m> <c-]>
 nnoremap <leader>v V`]
 
 nnoremap <leader>w <c-w>v<c-w>l
