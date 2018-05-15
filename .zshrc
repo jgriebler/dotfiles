@@ -41,7 +41,7 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export CUPS_SERVER="localhost"
 export EDITOR="vim"
 
-PATH="$HOME/.local/bin:/usr/bin/core_perl:/usr/bin"
+PATH="$HOME/.cargo/bin:$HOME/.local/bin:/usr/bin/core_perl:/usr/bin"
 
 TERM=xterm-256color
 
