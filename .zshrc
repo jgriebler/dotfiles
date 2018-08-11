@@ -43,7 +43,7 @@ export EDITOR="vim"
 
 PATH="$HOME/.cargo/bin:$HOME/.local/bin:/usr/bin/core_perl:/usr/bin"
 
-TERM=xterm-256color
+TERM=xterm-termite
 
 # new keyboard doesn't have separate menu key
 # setxkbmap -option "compose:menu"
