@@ -97,3 +97,8 @@ bindkey '^i' expand-or-complete-prefix
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# load autocompletion for exercism CLI
+if [ -f ~/.config/exercism/exercism_completion.zsh ]; then
+  source ~/.config/exercism/exercism_completion.zsh
+fi
