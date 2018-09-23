@@ -192,6 +192,7 @@ bindsym $mod+m mode "$mode_system"
 
 exec --no-startup-id tiled_setup
 exec --no-startup-id nm-applet
+exec --no-startup-id "sh -c 'sleep 15; exec redshift-start'"
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 exec_always --no-startup-id launch_polybar
 
