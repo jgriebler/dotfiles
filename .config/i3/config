@@ -150,13 +150,12 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # set $mode_launch Launch: [f]irefox [t]hunderbird [h]exchat [c]hromium [s]potify
-set $mode_launch Launch: %{F#0a81f5}f%{F-}irefox %{F#0a81f5}t%{F-}hunderbird %{F#0a81f5}h%{F-}exchat %{F#0a81f5}c%{F-}hromium %{F#0a81f5}s%{F-}potify
+set $mode_launch Launch: %{F#0a81f5}f%{F-}irefox %{F#0a81f5}t%{F-}hunderbird %{F#0a81f5}h%{F-}exchat %{F#0a81f5}s%{F-}potify
 
 mode "$mode_launch" {
         bindsym f exec firefox
 	bindsym t exec thunderbird
 	bindsym h exec hexchat
-	bindsym c exec chromium
 	bindsym s exec --no-startup-id spotify
 
         # back to normal: Enter or Escape
