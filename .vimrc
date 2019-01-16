@@ -36,6 +36,10 @@ set rtp+=$PYTHON_PACKAGES/powerline/bindings/vim
 colorscheme molokai
 
 " Options {{{
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+
 set list
 set listchars=tab:→\ ,trail:·
 set autoindent
