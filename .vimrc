@@ -73,6 +73,8 @@ let g:ranger_replace_netrw = 1
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <silent> <leader>sv :source $MYVIMRC<cr>:let @/ = ""<cr>
 
+nnoremap <leader>o :FZF<cr>
+
 nnoremap <leader>i <c-]>
 nnoremap <leader>r <c-t>
 
