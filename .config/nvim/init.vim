@@ -8,6 +8,8 @@ let maplocalleader = ","
 call plug#begin()
 
 Plug 'itchyny/lightline.vim'
+Plug 'edkolev/promptline.vim'
+Plug 'edkolev/tmuxline.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
