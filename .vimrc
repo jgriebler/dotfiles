@@ -7,6 +7,7 @@ let maplocalleader = ","
 " Plugin list {{{
 call plug#begin()
 
+Plug 'itchyny/lightline.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -15,6 +16,7 @@ Plug 'francoiscabrol/ranger.vim'
 Plug 'godlygeek/tabular'
 Plug 'scrooloose/nerdcommenter'
 Plug 'def-lkb/vimbufsync'
+Plug 'tpope/vim-fugitive'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'idris-hackers/idris-vim'
 Plug 'the-lambda-church/coquille', { 'branch': 'pathogen-bundle' }
@@ -30,8 +32,6 @@ Plug 'ajh17/VimCompletesMe'
 
 call plug#end()
 "}}}
-
-set rtp+=$PYTHON_PACKAGES/powerline/bindings/vim
 
 colorscheme molokai
 
@@ -100,6 +100,38 @@ nnoremap <leader>j <c-w>h
 nnoremap <leader>k <c-w>j
 nnoremap <leader>l <c-w>k
 nnoremap <leader>ö <c-w>l
+" }}}
+
+" Lightline {{{
+let g:lightline = {
+            \ 'active': {
+            \   'left': [
+            \     [ 'mode', 'paste' ],
+            \     [ 'fugitive', 'readonly', 'filename', 'modified' ]
+            \   ]
+            \ },
+            \ 'component': {
+            \   'lineinfo': ' %3l:%-2v',
+            \ },
+            \ 'component_function': {
+            \   'readonly': 'LightlineReadonly',
+            \   'fugitive': 'LightlineFugitive'
+            \ },
+            \ 'separator': { 'left': '', 'right': '' },
+            \ 'subseparator': { 'left': '', 'right': '' }
+            \ }
+
+function! LightlineReadonly()
+    return &readonly ? '' : ''
+endfunction
+
+function! LightlineFugitive()
+    if exists('*fugitive#head')
+        let branch = fugitive#head()
+        return branch !=# '' ? ' '.branch : ''
+    endif
+    return ''
+endfunction
 " }}}
 
 " Autocommands {{{
