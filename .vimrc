@@ -1,5 +1,4 @@
 set nocompatible
-filetype off
 
 let mapleader = " "
 let maplocalleader = ","
@@ -63,8 +62,6 @@ set smartcase
 set incsearch
 set hlsearch
 
-set nobackup
-set nowritebackup
 set hidden
 
 let g:netrw_browsex_viewer = 'firefox'
