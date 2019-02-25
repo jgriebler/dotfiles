@@ -1,5 +1,3 @@
-set nocompatible
-
 let mapleader = " "
 let maplocalleader = ","
 
@@ -43,24 +41,17 @@ set softtabstop=4
 
 set list
 set listchars=tab:→\ ,trail:·
-set autoindent
 set cursorline
 set relativenumber
 set scrolloff=3
 set textwidth=80
 
-set laststatus=2
-set showcmd
 set noshowmode
-set ruler
 
-set wildmenu
 set modelines=0
 
 set ignorecase
 set smartcase
-set incsearch
-set hlsearch
 
 set hidden
 
