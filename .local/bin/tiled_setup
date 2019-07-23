@@ -1,6 +1,6 @@
 #!/bin/sh
 
-setxkbmap -layout de
+setxkbmap -layout us
 setxkbmap -option compose:caps
 
 xset r rate 200 20
