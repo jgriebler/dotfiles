@@ -27,7 +27,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 font-0 = Source Code Pro:pixelsize=9;1
-font-1 = Wuncon Siji:pixelsize=9;1
+font-1 = Siji:pixelsize=9;1
 
 radius = 3.0
 
