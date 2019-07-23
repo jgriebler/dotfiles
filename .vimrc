@@ -21,7 +21,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'idris-hackers/idris-vim'
 Plug 'the-lambda-church/coquille', { 'branch': 'pathogen-bundle' }
-Plug 'rust-lang/rust.vim'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'lervag/vimtex'
