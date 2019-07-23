@@ -1,6 +1,6 @@
 [options]
 
-font = Source Code Pro 10
+font = Hack 11
 
 audible_bell = false
 mouse_autohide = true
