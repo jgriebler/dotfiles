@@ -53,16 +53,17 @@ set ignorecase
 set smartcase
 
 set hidden
+set lazyredraw
 
 let g:netrw_browsex_viewer = 'firefox'
 let g:ranger_replace_netrw = 1
 " }}}
 
 " Mappings {{{
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <silent> <leader>sv :source $MYVIMRC<cr>:let @/ = ""<cr>
+nnoremap <leader>ev <cmd>vsplit $MYVIMRC<cr>
+nnoremap <silent> <leader>sv <cmd>source $MYVIMRC<cr><cmd>let @/ = ""<cr>
 
-nnoremap <leader>o :FZF<cr>
+nnoremap <leader>o <cmd>FZF<cr>
 
 nnoremap <leader>i <c-]>
 nnoremap <leader>r <c-t>
@@ -82,15 +83,20 @@ noremap L $
 
 inoremap <m-space> <esc>
 
-nnoremap <silent> <leader><leader> :let @/ = ""<cr>
+nnoremap <silent> <leader><leader> <cmd>let @/ = ""<cr>
 nnoremap <leader>v V`]
 
-nnoremap <leader>w <c-w>v<c-w>l
-nnoremap <leader>s <c-w>S<c-w>j
+nnoremap <leader>bn <cmd>bn<cr>
+nnoremap <leader>bp <cmd>bp<cr>
+
+nnoremap <leader>wv <c-w>v<c-w>l
+nnoremap <leader>wh <c-w>s<c-w>j
 nnoremap <leader>j <c-w>h
 nnoremap <leader>k <c-w>j
 nnoremap <leader>l <c-w>k
 nnoremap <leader>ö <c-w>l
+
+tnoremap <c-q> <c-q><c-\><c-n>
 " }}}
 
 " Lightline {{{
