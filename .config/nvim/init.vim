@@ -18,6 +18,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'idris-hackers/idris-vim'
 Plug 'JuliaEditorSupport/julia-vim'
+Plug 'wlangstroth/vim-racket'
+Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'lervag/vimtex'
 Plug 'cespare/vim-toml'
@@ -55,6 +57,9 @@ set lazyredraw
 
 let g:netrw_browsex_viewer = 'firefox'
 let g:ranger_replace_netrw = 1
+
+let g:rainbow#max_levels = 16
+let g:rainbow#pairs = [['(', ')'], ['[', ']']]
 " }}}
 
 " Mappings {{{
@@ -93,6 +98,7 @@ nnoremap <leader>j <c-w>h
 nnoremap <leader>k <c-w>j
 nnoremap <leader>l <c-w>k
 nnoremap <leader>ö <c-w>l
+nnoremap <leader>; <c-w>l
 
 tnoremap <c-q> <c-q><c-\><c-n>
 " }}}
@@ -131,7 +137,12 @@ endfunction
 
 " Autocommands {{{
 augroup asmsyntax
-	au!
-	au BufRead,BufNewFile *.asm setlocal filetype=mips
+    au!
+    au BufRead,BufNewFile *.asm setlocal filetype=mips
+augroup END
+
+augroup rainbow_lisp
+    au!
+    au FileType lisp,scheme,racket RainbowParentheses
 augroup END
 " }}}
