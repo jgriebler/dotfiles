@@ -11,11 +11,13 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+setopt HIST_IGNORE_DUPS
+
 source .promptline.sh
 
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export CUPS_SERVER="localhost"
-export EDITOR="vim"
+export EDITOR="nvim"
 
 PATH="$HOME/.cargo/bin:$HOME/.local/bin:/usr/bin/core_perl:/usr/bin"
 
