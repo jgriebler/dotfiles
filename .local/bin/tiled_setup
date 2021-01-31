@@ -1,7 +1,6 @@
 #!/bin/sh
 
-setxkbmap -layout us
-setxkbmap -option compose:caps
+setxkbmap de neo_qwertz -option
 
 xset r rate 200 20
 xset s off -dpms

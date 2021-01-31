@@ -49,7 +49,7 @@ alias la='ls -A'
 alias ll='ls -al'
 alias ls='ls --color=auto'
 
-eval $(dircolors -b)
+eval $(TERM=xterm-256color dircolors -b)
 
 # key bindings, confirmed to work
 # other bindings are copied
