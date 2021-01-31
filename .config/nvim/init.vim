@@ -11,6 +11,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'rbgrouleff/bclose.vim'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'godlygeek/tabular'
 Plug 'scrooloose/nerdcommenter'
@@ -54,6 +55,8 @@ set smartcase
 
 set hidden
 set lazyredraw
+
+let g:tex_flavor = 'latex'
 
 let g:netrw_browsex_viewer = 'firefox'
 let g:ranger_replace_netrw = 1
@@ -117,9 +120,7 @@ let g:lightline = {
             \ 'component_function': {
             \   'readonly': 'LightlineReadonly',
             \   'fugitive': 'LightlineFugitive'
-            \ },
-            \ 'separator': { 'left': '', 'right': '' },
-            \ 'subseparator': { 'left': '', 'right': '' }
+            \ }
             \ }
 
 function! LightlineReadonly()
@@ -127,7 +128,7 @@ function! LightlineReadonly()
 endfunction
 
 function! LightlineFugitive()
-    if exists('*fugitive#head')
+    if exists('*FugitiveHead')
         let branch = fugitive#head()
         return branch !=# '' ? ' '.branch : ''
     endif
