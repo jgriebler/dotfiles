@@ -1,19 +1,13 @@
-# Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 bindkey -e
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
+
 zstyle :compinstall filename '/home/johannes/.zshrc'
 
-autoload -Uz compinit
+autoload -Uz compinit colors vcs_info
 compinit
-# End of lines added by compinstall
-
-setopt HIST_IGNORE_DUPS
-
-source .promptline.sh
+colors
 
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export CUPS_SERVER="localhost"
@@ -21,11 +15,22 @@ export EDITOR="nvim"
 
 PATH="$HOME/.cargo/bin:$HOME/.local/bin:/usr/bin/core_perl:/usr/bin"
 
-TERM=xterm-termite
+setopt hist_ignore_dups
+setopt prompt_subst
+
+zstyle ':vcs_info:*' enable git hg svn
+zstyle ':vcs_info:*' formats "%F{yellow} %b%f"
+zstyle ':vcs_info:*' actionformats "%F{red}%a%f %F{yellow} %b%f"
+
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
 
 export FZF_DEFAULT_COMMAND='fd --type file --color always'
 export FZF_DEFAULT_OPTS='--ansi'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+PS1='%B%n%F{black}@%m%f %F{blue}%3~%f %#%b '
+RPS1='${vcs_info_msg_0_}'
 
 # new keyboard doesn't have separate menu key
 # setxkbmap -option "compose:menu"
