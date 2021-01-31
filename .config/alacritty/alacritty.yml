@@ -1,0 +1,31 @@
+font:
+  normal:
+    family: monospace
+  size: 12
+
+colors:
+  primary:
+    background: '#121212'
+    foreground: '#d0d0d0'
+  normal:
+    black:   '#121212'
+    red:     '#ff0000'
+    green:   '#00e500'
+    yellow:  '#eaea00'
+    blue:    '#0968d3'
+    magenta: '#d700d7'
+    cyan:    '#00dddd'
+    white:   '#d0d0d0'
+  bright:
+    black:   '#555555'
+    red:     '#ff1b1b'
+    green:   '#18e618'
+    yellow:  '#ffff1b'
+    blue:    '#2577d3'
+    magenta: '#ff00d7'
+    cyan:    '#19ffff'
+    white:   '#ffffff'
+
+background_opacity: 0.878431
+draw_bold_text_with_bright_colors: true
+dynamic_title: false

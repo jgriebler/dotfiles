@@ -1,0 +1,169 @@
+* {
+  border: none;
+  border-radius: 0;
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: monospace;
+  font-size: 10pt;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: rgba(80, 80, 80, 0.4);
+  color: #e0e0e0;
+  transition-property: background-color;
+  transition-duration: .5s;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+#workspaces button {
+  background-color: transparent;
+  border-radius: 10px;
+  color: #808080;
+  padding: 5px;
+}
+
+#workspaces button:hover {
+  color: #e0e0e0;
+}
+
+#workspaces button.focused {
+  background-color: rgba(80, 80, 80, 0.5161290322580645);
+  color: #e0e0e0;
+  font-weight: bold;
+}
+
+#workspaces button.urgent {
+  color: #eb4d4b;
+}
+
+.modules-left {
+  background-color: transparent;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.modules-center,
+.modules-right {
+  background-color: rgba(2, 2, 2, 0.7973856209150326);
+  border-radius: 10px;
+  margin: 5px;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#idle_inhibitor,
+#mpd {
+  margin: 0 3px;
+  padding: 5px;
+}
+
+#window {
+  margin: 0 4px;
+}
+
+#workspaces {
+  background-color: rgba(2, 2, 2, 0.7973856209150326);
+  border-radius: 10px;
+  margin: 0;
+}
+
+#mode {
+  background-color: rgba(2, 2, 2, 0.7973856209150326);
+  border-radius: 10px;
+  margin: 0 5px;
+  padding: 5px;
+}
+
+#battery.charging {
+  color: #77ccff;
+}
+
+#battery.good:not(.charging) {
+  color: #74ff74;
+}
+
+#battery.warning:not(.charging) {
+  color: #ffff44;
+}
+
+@keyframes blink {
+  to {
+    color: #e0e0e0;
+  }
+}
+
+#battery.critical:not(.charging) {
+  color: #ff3c3c;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+label:focus {
+  background-color: #000000;
+}
+
+#network.disconnected {
+  color: #ff3c3c;
+}
+
+#pulseaudio.muted {
+  color: #808080;
+}
+
+#cpu.low {
+  color: #74ff74;
+}
+
+#cpu.medium {
+  color: #ffff44;
+}
+
+#cpu.high {
+  color: #ff3c3c;
+}
+
+#memory.high {
+  color: #ff3c3c;
+}
+
+#temperature.critical {
+  color: #ff3c3c;
+}
+
+#idle_inhibitor {
+  color: #2d3436;
+}
+
+#idle_inhibitor.activated {
+  color: #ecf0f1;
+}
+
+#mpd {
+  color: #66cc99;
+}
+
+#mpd.disconnected {
+  color: #f53c3c;
+}
+
+#mpd.stopped {
+  color: #90b1b1;
+}
+
+#mpd.paused {
+  color: #51a37a;
+}

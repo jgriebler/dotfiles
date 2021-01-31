@@ -31,6 +31,7 @@ call plug#end()
 "}}}
 
 colorscheme molokai
+highlight Normal ctermbg=none
 
 " Options {{{
 set expandtab

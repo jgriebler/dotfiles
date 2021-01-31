@@ -1,0 +1,10 @@
+show=drun
+prompt=search
+location=top_left
+xoffset=5
+yoffset=5
+width=15%
+lines=10
+term=alacritty
+insensitive=true
+hide_scroll=true
