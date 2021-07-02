@@ -47,7 +47,7 @@ alias grep='grep --color=auto'
 alias l='ls -C'
 alias la='ls -A'
 alias ll='ls -al'
-alias ls='ls --color=auto'
+alias ls='ls -v --color=auto'
 
 eval $(TERM=xterm-256color dircolors -b)
 
