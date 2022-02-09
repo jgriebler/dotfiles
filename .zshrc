@@ -9,7 +9,6 @@ autoload -Uz compinit colors vcs_info
 compinit
 colors
 
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export CUPS_SERVER="localhost"
 export EDITOR="nvim"
 
