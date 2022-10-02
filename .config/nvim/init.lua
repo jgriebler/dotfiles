@@ -10,10 +10,13 @@ require('packer').startup(function()
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-calc'
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
+    use 'nvim-telescope/telescope.nvim'
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
     use 'itchyny/lightline.vim'
     use 'flazz/vim-colorschemes'
     use 'tpope/vim-repeat'
@@ -29,11 +32,10 @@ require('packer').startup(function()
     use 'junegunn/rainbow_parentheses.vim'
     use 'pangloss/vim-javascript'
     use 'lervag/vimtex'
-    use {'cespare/vim-toml', branch='main'}
+    use {'cespare/vim-toml', branch = 'main'}
     use 'plasticboy/vim-markdown'
     use 'rhysd/vim-wasm'
     use 'kylelaker/riscv.vim'
-    use 'ojroques/nvim-lspfuzzy'
 end)
 -- }}}
 
@@ -88,7 +90,7 @@ end
 map('n', '<leader>ce', '<cmd>vsplit $MYVIMRC<cr>')
 map('n', '<leader>cs', '<cmd>source $MYVIMRC<cr>')
 
-map('n', '<leader>o', '<cmd>FZF<cr>')
+map('n', '<leader>o', '<cmd>Telescope find_files<cr>')
 
 map('n', '<leader>i', '<c-]>')
 map('n', '<leader>r', '<c-t>')
@@ -140,7 +142,7 @@ end
 
 cmp.setup {
     completion = {
-        autocomplete = false,
+        keyword_length = 3,
     },
     snippet = {
         expand = function(args)
@@ -166,19 +168,20 @@ cmp.setup {
             else
                 fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
             end
-        end, { "i", "s" }),
+        end, { 'i', 's', 'c' }),
         ["<S-Tab>"] = cmp.mapping(function()
             if cmp.visible() then
                 cmp.select_prev_item()
             elseif vim.fn["vsnip#jumpable"](-1) == 1 then
                 feedkey("<Plug>(vsnip-jump-prev)", "")
             end
-        end, { "i", "s" }),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        end, { 'i', 's', 'c' }),
+        ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     },
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'vsnip' },
+        { name = 'calc' },
     }, {
         { name = 'buffer', option = { keyword_pattern = [[\k\+]] }},
     }),
@@ -199,30 +202,37 @@ cmp.setup.cmdline(':', {
 })
 -- }}}
 
+-- Telescope {{{
+local telescope = require 'telescope'
+telescope.setup {}
+telescope.load_extension('fzf')
+
+map('n', '<leader>tt', '<cmd>Telescope builtin<cr>')
+map('n', '<leader>th', '<cmd>Telescope help_tags<cr>')
+-- }}}
+
 -- LSP {{{
 local lsp = require 'lspconfig'
-local lspfuzzy = require 'lspfuzzy'
 local on_attach = function(client)
     local opts = { noremap = true, silent = true }
-    local function map(from, to) vim.api.nvim_buf_set_keymap(bufnr, 'n', from, to, opts) end
+    local function map(from, to) vim.api.nvim_buf_set_keymap(0, 'n', from, to, opts) end
 
-    map('gD', '<cmd>lua vim.lsp.buf.declaration()<cr>')
-    map('gd', '<cmd>lua vim.lsp.buf.definition()<cr>')
     map('K', '<cmd>lua vim.lsp.buf.hover()<cr>')
-    map('gi', '<cmd>lua vim.lsp.buf.implementation()<cr>')
+    map('gD', '<cmd>lua vim.lsp.buf.declaration()<cr>')
+    map('gd', '<cmd>Telescope lsp_definitions<cr>')
+    map('gi', '<cmd>Telescope lsp_implementations<cr>')
+    map('gr', '<cmd>Telescope lsp_references<cr>')
+    map('gt', '<cmd>Telescope lsp_document_symbols<cr>')
+    map('gT', '<cmd>Telescope lsp_type_definitions<cr>')
     map('<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
     map('<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>')
     map('<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>')
     map('<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>')
-    map('<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<cr>')
     map('<leader>r', '<cmd>lua vim.lsp.buf.rename()<cr>')
-    map('<leader>a', '<cmd>lua vim.lsp.buf.code_action()<cr>')
-    map('gr', '<cmd>lua vim.lsp.buf.references()<cr>')
-    map('gt', '<cmd>lua vim.lsp.buf.document_symbol()<cr>')
-    map('gp', '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>')
-    map('gn', '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>')
-    map('<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>')
     map('<leader>n', '<cmd>lua vim.lsp.buf.formatting()<cr>')
+    map('<leader>a', '<cmd>Telescope lsp_code_actions<cr>')
+    map('gp', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
+    map('gn', '<cmd>lua vim.diagnostic.goto_next()<cr>')
 end
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -231,8 +241,6 @@ local servers = {'rust_analyzer'}
 for _, server in ipairs(servers) do
     lsp[server].setup {on_attach = on_attach, capabilities = capabilities}
 end
-
-lspfuzzy.setup {}
 -- }}}
 
 -- Lightline {{{
@@ -259,7 +267,7 @@ endfunction
 
 function! LightlineFugitive()
     if exists('*FugitiveHead')
-        let branch = fugitive#head()
+        let branch = FugitiveHead()
         return branch !=# '' ? ' '.branch : ''
     endif
     return ''
