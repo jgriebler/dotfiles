@@ -214,7 +214,7 @@ mode "launch" {
 bindsym $mod+o mode "launch"
 
 mode "system" {
-        bindsym l exec swaylock, mode "default"
+        bindsym l exec gtklock, mode "default"
         bindsym o exit, mode "default"
         bindsym u exec systemctl suspend, mode "default"
         bindsym h exec systemctl hibernate, mode "default"
@@ -268,4 +268,4 @@ exec_always import-gsettings
 exec mako
 exec waybar
 exec gammastep
-exec swayidle -w before-sleep swaylock
+exec swayidle -w before-sleep gtklock
